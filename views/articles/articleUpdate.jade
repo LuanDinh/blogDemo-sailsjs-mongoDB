@@ -1,0 +1,19 @@
+extends ../layout.jade
+
+block content
+  h2 Article Update
+
+  form(name='myForm', method='post', action='/articles')
+    input(name='id', type='hidden', value='#{article.id}')
+    label Title: 
+    input(name='title', value='#{article.title}')
+    p
+    label Description: 
+    p
+    textarea(name='description', rows='5', cols='50')= article.description
+    p
+    p
+    input(type='submit', value='Update')
+
+block foot
+  p Article Update Footer

@@ -1,0 +1,38 @@
+extends ../layout.jade
+
+block content
+  h2 Articles List
+  button
+    a(href='/articles/to/createForm') Create a new one
+  p
+  table
+    tr
+      td Title
+      td Update
+      td Delete
+    each article, index in articles
+      tr
+        td 
+          a.no-underline(href='/articles/#{article.id}')= article.title
+        td 
+          button
+            a(href='/articles/update/#{article.id}') update
+        td 
+          button
+            a(id='#{article.id}', href='javascript:void(0)', onclick='deleteArt(this)') delete
+
+block foot
+  p Articles List Footer
+
+block append scripts
+  script(type='text/javascript').    
+    function deleteArt(obj) {
+      var r = confirm("Are you sure?");
+        if (r === true) {
+            var id = obj.getAttribute('id')
+            var url = window.location.href + '/delete/' + id
+            window.location.href = url
+        } else {
+            return
+        }
+    }

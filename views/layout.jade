@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+  head
+    title My Site - Blog Demo
+    block styles
+      style(type='text/css').
+        td > a, button > a {text-decoration: none;}
+    block scripts
+      script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
+  body
+    h1 Blog Demo
+    block content
+    block foot
+      #footer
+        p Some footer content

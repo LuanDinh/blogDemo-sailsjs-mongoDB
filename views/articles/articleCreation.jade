@@ -1,0 +1,21 @@
+extends ../layout.jade
+
+block content
+  h2 Article Creation
+
+  form(name='myForm', method='post', action='/articles')
+    label Title: 
+    input(name='title')
+    p
+    label Description: 
+    p
+    textarea(name='description', rows='5', cols='50')
+    p
+    p
+    input(type='submit', value='Create')
+    span &nbsp; &nbsp; &nbsp;
+    button
+        a(href='/articles') Cancel
+
+block foot
+  p Article Creation Footer
